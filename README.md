@@ -4,8 +4,8 @@
 # 应用截图
 ![app](https://user-images.githubusercontent.com/34303048/33700480-852675a2-db54-11e7-8221-6e023b64dd89.gif)
 
-# 使用
-# ImageInfo表示一张图片的信息
+## 使用
+## ImageInfo表示一张图片的信息
 ```javascript
 data class ImageInfo(var url: String?, //原图地址
                      var thumbUrl: String?, //缩略图地址
@@ -13,8 +13,8 @@ data class ImageInfo(var url: String?, //原图地址
                      var height: Int = 0, //原图宽度
                      var mLocationModel: LocationModel?) //缩略图所在屏幕位置
 ```
-##  原图的尺寸为0（大多情况）即width=0 height=0 则进入动画为alpha渐变动画，退出动画则是退回到缩略图位置（mLocationModel!=null）或者屏幕中间
-# 动画之前，要先设置mLocationModel才能平滑的开始/退出动画，否则从屏幕中间开始/退出动画
+######  原图的尺寸为0（大多情况）即width=0 height=0 则进入动画为alpha渐变动画，退出动画则是退回到缩略图位置（mLocationModel!=null）或者屏幕中间
+## 动画之前，要先设置mLocationModel才能平滑的开始/退出动画，否则从屏幕中间开始/退出动画
 
 1. 初始化单个缩略图屏幕位置
 ```javascript
@@ -27,13 +27,13 @@ mImageInfo.mLocationModel = ActivityUtil.getLocation(v)
        listData?.get(i)?.mLocationModel = ActivityUtil.getLocation(view, loc)
      }
 ```      
-# 跳转到详情页
+## 跳转到详情页
 ```javascript
  startActivity(Intent(this, DetailActivity::class.java).putExtra("index", position)
                             .putExtra("data", ItemModel实例))
                     overridePendingTransition(0, 0)
 ```      
-# 手势控件 
+## 手势控件 
 在ImageDetailFragment中加载UpDownRelativeLayout控件，并初始化动作
 ```javascript
   /**
@@ -48,7 +48,7 @@ mImageInfo.mLocationModel = ActivityUtil.getLocation(v)
  fun initData(view: PhotoView, mFinalHeight: Int, listener: PhotoViewMoveListener, mIsScalMove: Boolean = true
                  , mIsMoveUpFinished: Boolean = false)
   ``` 
-# 缩略图进入退出动画
+## 缩略图进入退出动画
  ```javascript                
      /**
      * 开始进入或退出动画
