@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/iv_item_exun_community_head"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp" />
+
+    <TextView
+        android:id="@+id/tv_item_exun_community_name"
+        style="@style/text_small"
+        android:layout_alignTop="@id/iv_item_exun_community_head"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="3dp"
+        android:layout_toRightOf="@id/iv_item_exun_community_head"
+        android:ellipsize="end"
+        android:maxLines="1" />
+
+    <TextView
+        android:id="@+id/tv_item_exun_community_time"
+        style="@style/text_small_hint"
+        android:layout_alignLeft="@id/tv_item_exun_community_name"
+        android:layout_below="@id/tv_item_exun_community_name"
+        android:ellipsize="end"
+        android:maxLines="1" />
+
+    <TextView
+        android:id="@+id/tv_item_exun_community_title"
+        style="@style/text_small"
+        android:layout_width="match_parent"
+        android:layout_alignLeft="@id/tv_item_exun_community_name"
+        android:layout_below="@id/tv_item_exun_community_time"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:gravity="left" />
+
+    <com.zzw.anim.view.NineGridlayout
+        android:id="@+id/nglyt_item_exun_community"
+        style="@style/style_mw"
+        android:layout_alignLeft="@id/tv_item_exun_community_name"
+        android:layout_below="@id/tv_item_exun_community_title"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="5dp"/>
+
+
+    <View
+        style="@style/line_black"
+        android:layout_below="@id/nglyt_item_exun_community"
+        android:layout_marginTop="5dp"/>
+</RelativeLayout>
