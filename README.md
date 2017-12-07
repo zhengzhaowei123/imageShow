@@ -13,7 +13,8 @@ data class ImageInfo(var url: String?, //原图地址
                      var height: Int = 0, //原图宽度
                      var mLocationModel: LocationModel?) //缩略图所在屏幕位置
 ```
-# 动画之前，要先设置mLocationModel才能平滑的动画，否则从屏幕中间开始动画
+# 原图的尺寸为0（大多情况）即width=0 height=0 则进入动画为alpha渐变动画，退出动画则是退回到缩略图位置（mLocationModel!=null）或者屏幕中间
+# 动画之前，要先设置mLocationModel才能平滑的开始/退出动画，否则从屏幕中间开始/退出动画
 
 1. 初始化单个缩略图屏幕位置
 ```javascript
