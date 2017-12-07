@@ -6,30 +6,35 @@
 
 # 使用
 # ImageInfo表示一张图片的信息
+```javascript
 data class ImageInfo(var url: String?, //原图地址
                      var thumbUrl: String?, //缩略图地址
                      var width: Int = 0, //原图长度
                      var height: Int = 0, //原图宽度
                      var mLocationModel: LocationModel?) //缩略图所在屏幕位置
-                     
+```
 # 动画之前，要先设置mLocationModel才能平滑的动画，否则从屏幕中间开始动画
 
 1. 初始化单个缩略图屏幕位置
+```javascript
 mImageInfo.mLocationModel = ActivityUtil.getLocation(v)
-
+``` 
 2. 初始化多个缩略图屏幕位置
+```javascript
   for (i in 0..childCount - 1) {
        val view = getChildAt(i)
        listData?.get(i)?.mLocationModel = ActivityUtil.getLocation(view, loc)
      }
-     
+```      
 # 跳转到详情页
+```javascript
  startActivity(Intent(this, DetailActivity::class.java).putExtra("index", position)
                             .putExtra("data", ItemModel实例))
                     overridePendingTransition(0, 0)
-     
+```      
 # 手势控件 
 在ImageDetailFragment中加载UpDownRelativeLayout控件，并初始化动作
+```javascript
   /**
      * @param view         设置PhotoView
      * *
@@ -41,9 +46,9 @@ mImageInfo.mLocationModel = ActivityUtil.getLocation(v)
      */
  fun initData(view: PhotoView, mFinalHeight: Int, listener: PhotoViewMoveListener, mIsScalMove: Boolean = true
                  , mIsMoveUpFinished: Boolean = false)
-             
+  ``` 
 # 缩略图进入退出动画
-                 
+ ```javascript                
      /**
      * 开始进入或退出动画
      * 进入动画: 如果有上一界面缩略图的位置则从那个位置进行动画，否则从屏幕中间开始动画
@@ -52,3 +57,4 @@ mImageInfo.mLocationModel = ActivityUtil.getLocation(v)
      * @param isThumb true代表缩略图进行动画， false代表原图进行动画
      */
     fun startThumbAnim(isShow: Boolean, isThumb: Boolean = true) {}
+``` 
