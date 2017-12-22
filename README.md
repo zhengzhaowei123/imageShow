@@ -59,3 +59,5 @@ mImageInfo.mLocationModel = ActivityUtil.getLocation(v)
      */
     fun startThumbAnim(isShow: Boolean, isThumb: Boolean = true) {}
 ``` 
+
+## 如果大家觉得有用欢迎给个start:sparkles::sparkles::sparkles::sparkles::sparkles::sparkles::sparkles::sparkles::sparkles:
